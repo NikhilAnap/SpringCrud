@@ -1,6 +1,8 @@
 
 package com.cjc.main.serviceImpl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,15 @@ public class HomeServiceImpl  implements HomeService{
 	public void saveData(Student s) {
 		hr.save(s);
 		
+	}
+
+	@Override
+	public Student singledata(int sId) {
+		
+		Optional<Student> stud=hr.findById(sId);
+		
+		
+		return stud.get();
 	}
 
 }
