@@ -31,4 +31,16 @@ public class HomeServiceImpl  implements HomeService{
 		return stud.get();
 	}
 
+	@Override
+	public void delete(int id) {
+		hr.deleteById(id);
+		
+	}
+
+	@Override
+	public Iterable<Student> getAll() {
+
+		return hr.findAll();
+	}
+
 }
